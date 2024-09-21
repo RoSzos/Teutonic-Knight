@@ -11,6 +11,8 @@ public class MainCharacterInfo : MonoBehaviour
     [SerializeField] protected internal float _walkSpeed;
     [SerializeField] protected internal float _runSpeed;
     [SerializeField] protected internal float _invecibilityTime;
+    [SerializeField] protected internal float _rollSpeed;
+    [SerializeField] protected internal float _rollCooldown;
     private STATE _currentState;
     public UnityAction<STATE> onStateChange;
 
@@ -36,6 +38,10 @@ public class MainCharacterInfo : MonoBehaviour
     public void UnsubscribeToAction(UnityAction<STATE> action)
     {
         onStateChange -= action;
+    }
+    public STATE GetCurrentState()
+    {
+        return _currentState;
     }
 
     public enum STATE

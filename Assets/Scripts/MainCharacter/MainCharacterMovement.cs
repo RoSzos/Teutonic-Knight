@@ -7,6 +7,8 @@ public class MainCharacterMovement : MonoBehaviour
 {
     [SerializeField] private MainCharacterInfo _mainInfo;
     [SerializeField] private bool _isRunning = false;
+    public Vector2 _movementDirection;
+    public bool _canMove = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +18,16 @@ public class MainCharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if (_canMove)
+            Movement();
     }
-
+    public void ChangeMovementBool(bool value)
+    {
+        _canMove = value;
+    }
     void Movement()
     {
-        Vector2 _movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
             _isRunning = true;

@@ -1,0 +1,17 @@
+//Idle
+Attack A
+Kick
+Attack C
+Cast Fireball ------> mana 
+Shoot Arrow 
+//Run / Walk
+//Roll (falta afetar hitbox)
+Lay
+Dance
+
+
+/vida
+/mana
+//WalkSpeed
+//RunSpeed
+//InvecibilityTime

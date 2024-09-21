@@ -24,16 +24,23 @@ public class MainCharacterAnimation : MonoBehaviour
         {
             _anim.SetBool("Walk", false);
             _anim.SetBool("Run", false);
+            _anim.SetBool("Roll", false);
         }
         else if (state == MainCharacterInfo.STATE.WALK)
         {
             _anim.SetBool("Walk", true);
             _anim.SetBool("Run", false);
+            _anim.SetBool("Roll", false);
         }
         else if (state == MainCharacterInfo.STATE.RUN)
         {
             _anim.SetBool("Walk", false);
             _anim.SetBool("Run", true);
+            _anim.SetBool("Roll", false);
+        }
+        else if (state == MainCharacterInfo.STATE.ROLL)
+        {
+            _anim.SetBool("Roll", true);
         }
 
     }
