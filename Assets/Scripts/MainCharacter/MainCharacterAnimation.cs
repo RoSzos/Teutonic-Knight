@@ -17,7 +17,7 @@ public class MainCharacterAnimation : MonoBehaviour
     void Update()
     {
 
-    }
+    }    
     void AnimationController(MainCharacterInfo.STATE state)
     {
         if (state == MainCharacterInfo.STATE.IDLE)
@@ -41,6 +41,18 @@ public class MainCharacterAnimation : MonoBehaviour
         else if (state == MainCharacterInfo.STATE.ROLL)
         {
             _anim.SetBool("Roll", true);
+        }
+        else if (state == MainCharacterInfo.STATE.ATTACK_A)
+        {
+            _anim.SetTrigger("AttackA");
+        }
+        else if (state == MainCharacterInfo.STATE.KICK)
+        {
+            _anim.SetTrigger("Kick");
+        }
+        else if (state == MainCharacterInfo.STATE.ATTACK_C)
+        {
+            _anim.SetTrigger("AttackC");
         }
 
     }

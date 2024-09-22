@@ -1,7 +1,7 @@
 //Idle
-Attack A
-Kick
-Attack C
+//Attack A
+//Kick
+//Attack C
 Cast Fireball ------> mana 
 Shoot Arrow 
 //Run / Walk

@@ -8,7 +8,7 @@ public class MainCharacterMovement : MonoBehaviour
     [SerializeField] private MainCharacterInfo _mainInfo;
     [SerializeField] private bool _isRunning = false;
     public Vector2 _movementDirection;
-    public bool _canMove = true;
+    private bool _canMove = true;
     // Start is called before the first frame update
     void Start()
     {
