@@ -1,6 +1,6 @@
 # Teutonic Knight
 
- Controles:
+ ## Controles:
  
  W/A/S/D = Movimentação
  
@@ -10,13 +10,13 @@
  
  J = Ataque
 
- Link youtube:
+ ## Link youtube:
 
  https://youtu.be/gNABT8LSyaE
 
-Diagrama de maquina de estado:
+## Diagrama de maquina de estado:
 
-Player:
+# Player:
 
 <p align="center">
     <a href="https://github.com/RoSzos/Teutonic-Knight/tree/main/Assets/ReadmeImages">
@@ -24,7 +24,7 @@ Player:
     </a>
 </p>
 
-Inimigo:
+# Inimigo:
 
 <p align="center">
     <a href="https://github.com/RoSzos/Teutonic-Knight/tree/main/Assets/ReadmeImages">
