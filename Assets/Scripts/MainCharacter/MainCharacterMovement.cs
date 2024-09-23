@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class MainCharacterMovement : MonoBehaviour
@@ -18,7 +17,7 @@ public class MainCharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_canMove)
+        if (_canMove && _mainInfo.GetCurrentState() != MainCharacterInfo.STATE.DEATH)
             Movement();
     }
     public void ChangeMovementBool(bool value)
@@ -39,11 +38,11 @@ public class MainCharacterMovement : MonoBehaviour
         {
             if (_movementDirection.x > 0)
             {
-                transform.localScale = new Vector3(math.abs(transform.localScale.x) * 1, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * 1, transform.localScale.y, transform.localScale.z);
             }
             else if (_movementDirection.x < 0)
             {
-                transform.localScale = new Vector3(math.abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
             }
             if (!_isRunning)
             {

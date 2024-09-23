@@ -54,6 +54,10 @@ public class MainCharacterAnimation : MonoBehaviour
         {
             _anim.SetTrigger("AttackC");
         }
+        else if (state == MainCharacterInfo.STATE.DEATH)
+        {
+            _anim.SetTrigger("Death");
+        }
 
     }
 }

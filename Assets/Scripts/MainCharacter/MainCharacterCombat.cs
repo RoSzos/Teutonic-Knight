@@ -10,29 +10,59 @@ public class MainCharacterCombat : MonoBehaviour
     [SerializeField] GameObject _attack_A_HitBox;
     [SerializeField] GameObject _KickHitBox;
     [SerializeField] GameObject _attack_C_HitBox;
+    [SerializeField] MainCharacterHit _mainHit;
+    [SerializeField] SpriteRenderer _mainChaSprite;
+    [SerializeField] private GameObject _deathScreen;
     private bool _canRoll = true;
     private bool _canAttack = true;
     void Start()
     {
-
+        _mainHit.SubscribeToAction(DeathStatus);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Roll();
+
         Attack_A();
+        Roll();
     }
     void Roll()
     {
-        if (_canRoll && Input.GetKeyDown(KeyCode.Space) && _mainMove._movementDirection.magnitude > 0 && _mainInfo.GetCurrentState() != MainCharacterInfo.STATE.ROLL)
+        if (_canRoll && _canAttack && Input.GetKeyDown(KeyCode.Space) && _mainMove._movementDirection.magnitude > 0 && _mainInfo.GetCurrentState() != MainCharacterInfo.STATE.ROLL)
         {
             StartCoroutine(RollTimer());
 
 
         }
     }
-
+    void DeathStatus(float life)
+    {
+        if (_mainInfo.GetCurrentState() != MainCharacterInfo.STATE.DEATH)
+            if (life <= 0)
+            {
+                _mainInfo.StateChange(MainCharacterInfo.STATE.DEATH);
+                _mainMove.ChangeMovementBool(false);
+                StartCoroutine(DeathAnimation());
+            }
+    }
+    IEnumerator DeathAnimation()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _mainChaSprite.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        _mainChaSprite.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        _mainChaSprite.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        _mainChaSprite.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        _mainChaSprite.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        _mainChaSprite.enabled = true;
+        yield return new WaitForSeconds(3);
+        _deathScreen.SetActive(true);
+    }
     void Attack_A()
     {
         if (Input.GetKeyDown(KeyCode.J) && _mainInfo.GetCurrentState() != MainCharacterInfo.STATE.ATTACK_A && _canAttack)
@@ -41,6 +71,7 @@ public class MainCharacterCombat : MonoBehaviour
             _mainMove.ChangeMovementBool(false);
             StartCoroutine(AttackATimer());
             _canAttack = false;
+            _canRoll = false;
         }
     }
     IEnumerator RollTimer()
@@ -88,7 +119,11 @@ public class MainCharacterCombat : MonoBehaviour
         if (recoverMovement)
         {
             _canAttack = true;
+
             _mainMove.ChangeMovementBool(true);
+
+            float cooldown = _mainInfo._rollCooldown;
+            _canRoll = true;
         }
 
 
@@ -118,7 +153,10 @@ public class MainCharacterCombat : MonoBehaviour
         if (recoverMovement)
         {
             _canAttack = true;
+
             _mainMove.ChangeMovementBool(true);
+
+            _canRoll = true;
         }
     }
     IEnumerator AtackCTimer()
@@ -134,7 +172,10 @@ public class MainCharacterCombat : MonoBehaviour
         if (recoverMovement)
         {
             _canAttack = true;
+
             _mainMove.ChangeMovementBool(true);
+
+            _canRoll = true;
         }
     }
 }

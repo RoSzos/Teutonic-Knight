@@ -13,18 +13,24 @@ public class MainCharacterInfo : MonoBehaviour
     [SerializeField] protected internal float _invecibilityTime;
     [SerializeField] protected internal float _rollSpeed;
     [SerializeField] protected internal float _rollCooldown;
+    [SerializeField] protected internal float _damage;
+    private float _maxLife;
     private STATE _currentState;
     public UnityAction<STATE> onStateChange;
 
     void Start()
     {
-
+        _maxLife = _life;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_currentState);
+
+    }
+    public float GetMaxLife()
+    {
+        return _maxLife;
     }
     public void StateChange(STATE value)
     {
