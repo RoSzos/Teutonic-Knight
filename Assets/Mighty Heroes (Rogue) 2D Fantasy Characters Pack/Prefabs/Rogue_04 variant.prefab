@@ -142,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 1065296089723357745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.85, y: 2.28, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4992360641545901318}
@@ -1542,7 +1542,6 @@ GameObject:
   - component: {fileID: 8961115762405407337}
   - component: {fileID: 1793519197644251801}
   - component: {fileID: 690035564956344172}
-  - component: {fileID: 3428846587166298852}
   - component: {fileID: 7484974395454695366}
   - component: {fileID: 2602341147258407017}
   - component: {fileID: 2602341147258407010}
@@ -1583,7 +1582,7 @@ Animator:
   m_GameObject: {fileID: 7540608354256889359}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3f91ccc83710e0140844bbc6f2ff40a4, type: 2}
+  m_Controller: {fileID: 22100000, guid: 377c76c10bd60ab49a246ecc1d0a3a15, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1636,7 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015c8d1bed13035409eaf8a9d260c84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 2602341147258407010}
 --- !u!114 &1793519197644251801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1669,27 +1668,9 @@ MonoBehaviour:
   _enemyChase: {fileID: 7484974395454695366}
   _spriteLayersManager: {fileID: 8961115762405407337}
   _attackStarter: {fileID: 1065296089723357745}
-  _attackHitBox: {fileID: 0}
-  _enemyHit: {fileID: 0}
-  _minDistanceAllowed: 2
---- !u!114 &3428846587166298852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7540608354256889359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4714766f0c2572544b8c7db44130657a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyInfo: {fileID: 1793519197644251801}
-  _enemyChase: {fileID: 7484974395454695366}
-  _spriteLayersManager: {fileID: 8961115762405407337}
-  _attackHitBox: {fileID: 2602341146651056862}
+  _attackHitBox: {fileID: 796644653009258897, guid: f0f051fb4e229a5489a3e922d86aeb7b, type: 3}
   _enemyHit: {fileID: 2602341146639209899}
-  _minDistanceAllowed: 4
+  _minDistanceAllowed: 15
 --- !u!114 &7484974395454695366
 MonoBehaviour:
   m_ObjectHideFlags: 0

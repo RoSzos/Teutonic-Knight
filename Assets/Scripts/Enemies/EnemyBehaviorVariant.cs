@@ -120,7 +120,7 @@ public class EnemyBehaviorVariant : MonoBehaviour
     IEnumerator AttackTimer()
     {
         yield return new WaitForSeconds(0.25f);
-        Instantiate(_attackHitBox, _attackStarter.transform);
+        Instantiate(_attackHitBox,_attackStarter.transform);
         yield return new WaitForSeconds(0.75f);
 
         yield return new WaitForSeconds(0.75f);
