@@ -102,9 +102,9 @@ public class MainCharacterCombat : MonoBehaviour
     }
     IEnumerator AttackATimer()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSecondsRealtime(0.25f);
         _attack_A_HitBox.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSecondsRealtime(0.3f);
         _attack_A_HitBox.SetActive(false);
         float timer = 0.3f;
         bool recoverMovement = true;
@@ -118,7 +118,7 @@ public class MainCharacterCombat : MonoBehaviour
                 StartCoroutine(KickTimer());
             }
             timer -= Time.deltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSecondsRealtime(Time.deltaTime);
         }
         if (recoverMovement)
         {
@@ -135,11 +135,11 @@ public class MainCharacterCombat : MonoBehaviour
     }
     IEnumerator KickTimer()
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSecondsRealtime(0.15f);
         _KickHitBox.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSecondsRealtime(0.2f);
         _KickHitBox.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         float timer = 0.2f;
         bool recoverMovement = true;
         while (timer > 0)
@@ -152,7 +152,7 @@ public class MainCharacterCombat : MonoBehaviour
                 StartCoroutine(AtackCTimer());
             }
             timer -= Time.deltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSecondsRealtime(Time.deltaTime);
         }
         if (recoverMovement)
         {
@@ -165,11 +165,11 @@ public class MainCharacterCombat : MonoBehaviour
     }
     IEnumerator AtackCTimer()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSecondsRealtime(0.4f);
         _attack_C_HitBox.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSecondsRealtime(0.3f);
         _attack_C_HitBox.SetActive(false);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSecondsRealtime(0.3f);
 
         bool recoverMovement = true;
 
