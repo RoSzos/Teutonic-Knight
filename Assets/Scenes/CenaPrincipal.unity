@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _life
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _damage
@@ -490,6 +490,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 175353455}
     m_Modifications:
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowedY
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4992360641545901318, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -750,7 +758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _life
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _damage
@@ -1073,7 +1081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _life
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _damage
@@ -1551,12 +1559,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce320e43315007041994f07a9d82ed1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 20
+  _life: 22
   _mana: 0
   _walkSpeed: 13
   _runSpeed: 30
-  _invecibilityTime: 0.2
-  _rollSpeed: 80
+  _invecibilityTime: 0.35
+  _rollSpeed: 60
   _rollCooldown: 0.75
   _damage: 2
 --- !u!4 &230467831
@@ -1613,6 +1621,7 @@ MonoBehaviour:
   _mainHit: {fileID: 1299167835}
   _mainChaSprite: {fileID: 2049034928}
   _deathScreen: {fileID: 347558496}
+  _hitBoxPlayer: {fileID: 1299167832}
 --- !u!50 &230467834
 Rigidbody2D:
   serializedVersion: 4
@@ -1870,6 +1879,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 175353455}
     m_Modifications:
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowedY
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4992360641545901318, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2407,7 +2424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _life
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _damage
@@ -3045,7 +3062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _life
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _damage
@@ -5755,7 +5772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _life
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _damage
@@ -6214,7 +6231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _life
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4559497816508939887, guid: b3d1057caadaef44ab620edfef78b14f, type: 3}
       propertyPath: _damage
@@ -6828,6 +6845,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 175353455}
     m_Modifications:
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowedY
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4992360641545901318, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -7707,6 +7732,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 175353455}
     m_Modifications:
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowedY
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4992360641545901318, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -9122,6 +9155,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 175353455}
     m_Modifications:
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 690035564956344172, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
+      propertyPath: _minDistanceAllowedY
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4992360641545901318, guid: 6faaf1042881a684daf1eb02693c1bff, type: 3}
       propertyPath: m_RootOrder
       value: 7

@@ -1542,7 +1542,7 @@ GameObject:
   - component: {fileID: 8961115762405407337}
   - component: {fileID: 1793519197644251801}
   - component: {fileID: 690035564956344172}
-  - component: {fileID: 7484974395454695366}
+  - component: {fileID: 294096901767203429}
   - component: {fileID: 2602341147258407017}
   - component: {fileID: 2602341147258407010}
   m_Layer: 0
@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc039802f87ed24995dd4c3c4c7f758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 10
+  _life: 6
   _runSpeed: 10
   _damage: 3
   _currentState: 0
@@ -1665,13 +1665,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyInfo: {fileID: 1793519197644251801}
-  _enemyChase: {fileID: 7484974395454695366}
+  _enemyChase: {fileID: 294096901767203429}
   _spriteLayersManager: {fileID: 8961115762405407337}
   _attackStarter: {fileID: 1065296089723357745}
   _attackHitBox: {fileID: 796644653009258897, guid: f0f051fb4e229a5489a3e922d86aeb7b, type: 3}
   _enemyHit: {fileID: 2602341146639209899}
   _minDistanceAllowed: 15
---- !u!114 &7484974395454695366
+  _minDistanceAllowedY: 1
+--- !u!114 &294096901767203429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1680,7 +1681,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7540608354256889359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e158d245c8c174bbed7b92ca36d140, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c29c1e0008587344be1461ce5c91b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyInfo: {fileID: 1793519197644251801}

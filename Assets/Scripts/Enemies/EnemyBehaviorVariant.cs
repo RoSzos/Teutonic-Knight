@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBehaviorVariant : MonoBehaviour
 {
     [SerializeField] private Enemy _enemyInfo;
-    [SerializeField] private EnemyChase _enemyChase;
+    [SerializeField] private EnemyChaseVariant _enemyChase;
     [SerializeField] private EnemySpriteLayerManager _spriteLayersManager;
     [SerializeField] GameObject _attackStarter;
     [SerializeField] GameObject _attackHitBox;
@@ -13,6 +13,7 @@ public class EnemyBehaviorVariant : MonoBehaviour
     private bool _canAttack = true;
     private GameObject _target;
     [SerializeField] private float _minDistanceAllowed = 2;
+    [SerializeField] private float _minDistanceAllowedY = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class EnemyBehaviorVariant : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_enemyChase.GetDistance() < _minDistanceAllowed && _enemyInfo.GetCurrentState() != Enemy.STATE.ATTACK && _canAttack)
+        if (_enemyChase.GetDistance() < _minDistanceAllowed && _enemyChase.GetDistanceY() < _minDistanceAllowedY && _enemyInfo.GetCurrentState() != Enemy.STATE.ATTACK && _canAttack)
         {
             _enemyInfo.StateChange(Enemy.STATE.ATTACK);
         }
@@ -120,9 +121,9 @@ public class EnemyBehaviorVariant : MonoBehaviour
     IEnumerator AttackTimer()
     {
         yield return new WaitForSeconds(0.25f);
-        Instantiate(_attackHitBox,_attackStarter.transform);
-        yield return new WaitForSeconds(0.75f);
-
+        GameObject _trownWeapon = GameObject.Instantiate(_attackHitBox, _attackStarter.transform);
+        _trownWeapon.transform.parent = null;
+        _trownWeapon.SetActive(true);
         yield return new WaitForSeconds(0.75f);
         if (transform.position.x < _target.transform.position.x)
         {

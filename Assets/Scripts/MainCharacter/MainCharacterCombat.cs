@@ -13,6 +13,7 @@ public class MainCharacterCombat : MonoBehaviour
     [SerializeField] MainCharacterHit _mainHit;
     [SerializeField] SpriteRenderer _mainChaSprite;
     [SerializeField] private GameObject _deathScreen;
+    [SerializeField] private GameObject _hitBoxPlayer;
     private bool _canRoll = true;
     private bool _canAttack = true;
     void Start()
@@ -80,6 +81,8 @@ public class MainCharacterCombat : MonoBehaviour
         float cooldown = _mainInfo._rollCooldown;
         _canRoll = false;
         _mainMove.ChangeMovementBool(false);
+        BoxCollider2D _hitBox = _hitBoxPlayer.GetComponent<BoxCollider2D>();
+        _hitBox.enabled = false;
         _mainInfo.StateChange(MainCharacterInfo.STATE.ROLL);
         while (timer > 0)
         {
@@ -87,6 +90,7 @@ public class MainCharacterCombat : MonoBehaviour
             timer -= Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        _hitBox.enabled = true;
         _mainMove.ChangeMovementBool(true);
         while (cooldown > 0)
         {

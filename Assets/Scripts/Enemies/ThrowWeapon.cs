@@ -9,7 +9,7 @@ public class ThrowWeapon : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        transform.parent = null;
+
         StartCoroutine(Timer());
     }
 
